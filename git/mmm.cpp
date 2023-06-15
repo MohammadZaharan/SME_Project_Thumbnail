@@ -12,6 +12,7 @@ static void pad_added_handler(GstElement *src, GstPad *pad, GstElement *sink)
 	  GstPad *sinkpad=gst_element_get_static_pad(sink, "sink");
 	  g_print ("Received new pad '%s' from '%s':\n", GST_PAD_NAME (pad), GST_ELEMENT_NAME (src));
     /* Check the new pad's type */
+    
 	  new_pad_caps = gst_pad_get_current_caps (pad);
 	  new_pad_struct = gst_caps_get_structure (new_pad_caps, 0);
 	  new_pad_type = gst_structure_get_name (new_pad_struct);
